@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import LoginPage from './components/login.js';
 
 class App extends Component {
 
@@ -24,15 +25,37 @@ class App extends Component {
   };
 
   render() {
+
+    const Home = () => <h1>Home</h1>;
+    const Admin = () => <h1>Admin</h1>;
+    
+    const NavBar = () => (
+      <ul>
+        <li>
+          <Link to="/">Home</Link>      
+        </li>
+        <li>
+        <Link to="/admin">Admin</Link>
+        </li>
+      </ul>
+    );
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
           {this.state.response}
         </p>
+        <Router>
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/logs" render={() => <h1>Logs</h1>} />
+          <Route path="/NavBar" component={NavBar} />
+          <Route path="/login" component={LoginPage} />
+        </div>
+          </Router>
       </div>
     );
   }
