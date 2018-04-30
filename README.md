@@ -13,6 +13,7 @@ Run the developement web-server using the 'yarn dev' command
 # Notes:
 
 version: 0.1 - Base application implemented (Postgres-NodeJs-React)
+
 version: 0.2 - Postgres Database architecture implemented through Sequalize ORM, basic login feature implmented
 
 upcoming:
