@@ -3,6 +3,7 @@ import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
 
 class NavigationBar extends React.Component {
     render() {
+
         return (
             <Navbar inverse collapseOnSelect>
                 <Navbar.Header>
@@ -28,11 +29,8 @@ class NavigationBar extends React.Component {
                     </NavDropdown>
                     </Nav>
                     <Nav pullRight>
-                    <NavItem eventKey={1} href="#">
-                        Login
-                    </NavItem>
-                    <NavItem eventKey={2} href="#">
-                        Sign Up
+                    <NavItem eventKey={1} href="/login">
+                        Login/signup
                     </NavItem>
                     </Nav>
                 </Navbar.Collapse>
