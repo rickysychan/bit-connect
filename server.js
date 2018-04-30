@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 require('./server/routes')(app)
 
 app.get('*', (req, res) => {
-  res.send({ express: 'Hello From netherlands' })
+  res.send({ express: 'Hello Bitconnect User!' })
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`))

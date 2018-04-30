@@ -14,9 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
   SubscribedCurrency.associate = (models) => {
-    SubscribedCurrency.hasMany(models.User, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE'
+    SubscribedCurrency.belongsToMany(models.User, {
+      through: 'UserCurrency',
+      as: 'User',
+      foreignKey: 'userId'
     })
   }
   return SubscribedCurrency

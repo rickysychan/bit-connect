@@ -15,8 +15,7 @@ module.exports = {
           token_id: req.params.token_id
         },
         include: [{
-          model: subscribedcurrency,
-          as: 'subscribed currency'
+          model: subscribedcurrency
         }]
       })
       .then(user => {

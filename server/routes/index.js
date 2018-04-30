@@ -8,6 +8,7 @@ module.exports = (app) => {
 
   // subscribed currency controllers
   app.post('/api/user/:token_id/currencies', subscribedCurrenciesController.create)
+  app.get('/api/user/:token_id/currencies', subscribedCurrenciesController.list)
 
   // user Controllers
   app.get('/api/user', usersController.list)
