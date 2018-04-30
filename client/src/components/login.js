@@ -9,18 +9,19 @@ let responseGoogle = (response) => {
     + "  email: " + response.profileObj.email 
   );
   console.log("Id Token: " + response.tokenId)
-
 }
 
 class LoginPage extends React.Component {
   state = {
-    response: ''
+    response: 'moo'
   }
+
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
+  this.callApi()
+  .then(res => this.setState({ response: res.express }))
+  .catch(err => console.log(err));
+}
+
 
   callApi = async () => {
     const response = await fetch('/api/hello');
@@ -50,4 +51,4 @@ class LoginPage extends React.Component {
       );
     }
   }
-export default LoginPage;
+export default LoginPage
