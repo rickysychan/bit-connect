@@ -1,0 +1,17 @@
+.user-grid{
+    font-size: 300px;
+    color: #ffe23f;
+    font-family: "Montserrat", sans-serif;
+}
+.user-grid p{
+    color: black;
+    font-size: 30px;
+}
+html {
+    height: 100%;
+  }
+.user-jumbo{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    min-height: 100%;
+}

@@ -41,7 +41,8 @@ io.on('connection', socket => {
 // Require our routes into the application.
 require('./server/routes')(app)
 
-app.get('*', (req, res) => {
+app.get('/api/hello', (req, res) => {
+  console.log('this')
   res.send({ express: 'Hello Bitconnect User!' })
 })
 
