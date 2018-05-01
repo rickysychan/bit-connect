@@ -1,10 +1,12 @@
 const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
+const io = require('socket.io')();
 
 const app = express()
 const port = process.env.PORT || 5000
-
+io.listen(port)
+console.log('socket listening on port ', port)
 // Log requests to the console.
 app.use(logger('dev'))
 
