@@ -1,6 +1,7 @@
 const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
+const io = require('socket.io')();
 
 const app = express()
 const port = process.env.PORT || 5000

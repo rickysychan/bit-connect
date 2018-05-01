@@ -4,32 +4,35 @@ import '../css/login.css';
 
 let responseGoogle = (response) => {
   console.log(response)
-  console.log(
-    "familyName: " + response.profileObj.familyName + "  FirstName: " + response.profileObj.givenName 
-    + "  email: " + response.profileObj.email 
-  );
-  console.log("Id Token: " + response.tokenId)
+  let lastName = response.profileObj.familyName
+  let firstName = response.profileObj.givenName 
+  let email = response.profileObj.email 
+  let tokenid = response.googleId
+
+  let userData={
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    token_id: tokenid
+  }
+
+  window.location.replace("http://localhost:3000/")
+  
+  return fetch('/api/user', {
+    method: 'post',
+    body: JSON.stringify(userData),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
 }
+
+
 
 class LoginPage extends React.Component {
   state = {
-    response: 'moo'
-  }
-
-  componentDidMount() {
-  this.callApi()
-  .then(res => this.setState({ response: res.express }))
-  .catch(err => console.log(err));
-}
-
-
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-  
-    if (response.status !== 200) throw Error(body.message);
-  
-    return body;
+    response: ''
   }
 
     render() {
