@@ -1,0 +1,19 @@
+.currencyTable{
+    text-align: center;
+    width: 100%;
+  }
+  .table-div{
+      max-height:500px; 
+      overflow: auto;
+  }
+
+  td{
+      padding-bottom: 5px;
+      word-break:break-all;
+  }
+  .btn {
+    margin-bottom: 5px;
+  }
+  th{
+      text-align: center;
+  }
