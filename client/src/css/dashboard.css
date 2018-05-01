@@ -3,10 +3,13 @@
     width: 100%;
   }
   .table-div{
-      max-height:500px; 
+      max-height:400px; 
       overflow: auto;
   }
-
+  .jumbo-image{
+    font-family: "Montserrat", sans-serif;
+    margin: 0 auto;
+  }
   td{
       padding-bottom: 5px;
       word-break:break-all;
@@ -17,3 +20,21 @@
   th{
       text-align: center;
   }
+  .lower-third{
+      min-height: 300px;
+      font-family: "Montserrat", sans-serif;
+      background-color: lavender;
+      padding-top: 30px;
+      padding-bottom: 30px;
+  }
+  .lower-third .coin-image{
+      font-size: 150px;
+      color: #ffe23f;
+      margin-bottom: 20px;
+      margin-top: 20px;
+  }
+
+  .lower-third p{
+      font-size: 15px;
+  }
+

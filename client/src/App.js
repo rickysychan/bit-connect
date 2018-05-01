@@ -32,7 +32,6 @@ class App extends Component {
     return (
       <div className="App">
         <NavigationBar />
-        <p>{this.state.response}</p>
         <Router>
         <div>
           <Route exact path="/" component={Main} />

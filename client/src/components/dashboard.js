@@ -1,6 +1,6 @@
 import React from 'react'
 import socketIOClient from 'socket.io-client'
-import { Jumbotron, Button, Table } from 'react-bootstrap';
+import { Jumbotron, Button, Table, Image } from 'react-bootstrap';
 import '../css/dashboard.css';
 
 
@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
         }
       }
 
-      componentWillMount(){
+      componentDidMount(){
         let grabData = () => {
             return fetch('https://api.coinmarketcap.com/v1/ticker/')
             .then(function(response) {
@@ -75,16 +75,17 @@ class Dashboard extends React.Component {
             <td >{dataObj.percent_change_24h}</td> 
             <td >{dataObj.price_usd}</td>
             <form>
-                <Button type="submit" bsStyle="primary">Subscribe</Button> 
+                <Button type="submit" id={dataObj.name} bsStyle="primary">Subscribe</Button> 
             </form>
         </tr>   
     )
 
         return (
             <div>
-                <Jumbotron>
+                <Jumbotron className='jumbotron'>
                     <h1 className="display-3">Current Crypto Currency Values</h1>
                     <hr className="my-2" />
+                    <Image className='jumbo-image' src='https://cdn-images-1.medium.com/max/1000/0*_eFs7xwwmbCPPEWz.png?width=639&height=319' responsive />
                     <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                     <p className="lead">
                     <Button onClick={() => this.send()} bsStyle="primary">Change color</Button>
@@ -106,9 +107,15 @@ class Dashboard extends React.Component {
                                 <th> Price </th>
                             </tr>
                                 {data}
-                                </tbody>
+                        </tbody>
                         </Table>
                     </div>
+                    <div className="lower-third">
+                        <h1> The world's most reliable CryptoCurrency Monitor </h1>
+                        <i class="fab fa-bitcoin coin-image"></i>
+                        <p> We are ready to help you become more informed, ready to get started? </p>
+                        <Button bsStyle="primary">I'm ready</Button>
+                        </div>
             </div>
         )
     }

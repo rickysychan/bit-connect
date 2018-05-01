@@ -1,11 +1,12 @@
 import React from 'react';
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
+import '../css/navbar.css';
 
 class NavigationBar extends React.Component {
     render() {
 
         return (
-            <Navbar inverse collapseOnSelect>
+            <Navbar className='navBar' inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
                     <a href="#brand">BitConnect</a>
