@@ -1,23 +1,21 @@
 import React from 'react'
-import socketIOClient from 'socket.io-client'
 import { Button, Table } from 'react-bootstrap';
 import '../css/dashboard.css';
 
 
 class Dashboard extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            endpoint: "http://127.0.0.1:5000", // this is where we are connecting to with sockets
-            color: 'white',
             data: []
         }
       }
 
-      componentDidMount(){
+    componentDidMount(){
         this.grabData()
-        setInterval(this.grabData, 5000)
+        // setInterval(this.grabData, 5000)
     }
+
     grabData = async () => {
         return fetch('https://api.coinmarketcap.com/v1/ticker/')
         .then(function(response) {
@@ -33,35 +31,12 @@ class Dashboard extends React.Component {
         })
     }
 
-        // method for emitting a socket.io event
-  send = () => {
-    const socket = socketIOClient(this.state.endpoint)
-    
-    // this emits an event to the socket (your server) with an argument of 'red'
-    // you can make the argument any color you would like, or any kind of data you want to send.
-    console.log(this.state.color)
-    socket.emit('change color', this.state.color) 
-    // socket.emit('change color', 'red', 'yellow') | you can have multiple arguments
-  }
-  
-    // adding the function
-    setColor = (color) => {
-        this.setState({ color })
-      }
+    sendData = (e) =>{
+        e.preventDefault();
+        this.props.setMessage()
+    }
 
-  // render method that renders in code if the state is updated
   render() {
-    // Within the render method, we will be checking for any sockets.
-    // We do it in the render method because it is ran very often.
-    const socket = socketIOClient(this.state.endpoint)
-    
-    // socket.on is another method that checks for incoming events from the server
-    // This method is looking for the event 'change color'
-    // socket.on takes a callback function for the first argument
-    socket.on('change color', (color) => {
-      // setting the color of our button
-      document.body.style.backgroundColor = color
-    })
 
     let dataObj = this.state.data
     const data = dataObj.map((dataObj) =>
@@ -79,7 +54,7 @@ class Dashboard extends React.Component {
                 <input hidden value={dataObj.name} name='name'></input>
                 <input hidden value={dataObj.symbol} name='symbol'></input>
                 <input hidden value={dataObj.price_usd} name='priceAtSubscription'></input>
-                <Button type="submit" id={dataObj.name} bsStyle="primary">Subscribe</Button> 
+                <Button type="submit" id={dataObj.name} onClick={this.sendData} bsStyle="primary">Subscribe</Button> 
             </form>
         </tr>   
     )

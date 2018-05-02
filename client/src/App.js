@@ -11,7 +11,7 @@ import userCurrency from './components/userCurrency.js';
 class App extends Component {
 
   render() {
-
+    
     return (
       <div className="App">
         <NavigationBar />

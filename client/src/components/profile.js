@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Grid, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import '../css/profile.css';
 
 class Profile extends React.Component {
