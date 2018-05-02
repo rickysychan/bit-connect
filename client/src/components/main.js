@@ -15,29 +15,23 @@ class Main extends React.Component {
     send = () => {
         const socket = socketIOClient(this.state.endpoint)
         
-        // this emits an event to the socket (your server) with an argument of 'red'
-        // you can make the argument any color you would like, or any kind of data you want to send.
+        // this emits an event to the socket (your server) with an argument of 'message'
+        
         console.log(this.state.message)
         socket.emit('change message', this.state.message) 
-        // socket.emit('change color', 'red', 'yellow') | you can have multiple arguments
       }
-      
-        // adding the function
+
         setMessage(message){
             this.setState({ message })
             this.send()
           }
-    
-      // render method that renders in code if the state is updated
 
     render() {
         // Within the render method, we will be checking for any sockets.
-        // We do it in the render method because it is ran very often.
         const socket = socketIOClient(this.state.endpoint)
         
         // socket.on is another method that checks for incoming events from the server
-        // This method is looking for the event 'change color'
-        // socket.on takes a callback function for the first argument
+
         socket.on('change message', (message_) => {
             this.setState({message: message_})
         })

@@ -1,4 +1,4 @@
-# Bitconnect v0.2
+# Bitconnect v0.3
 
 Bitonnect is a CryptoCurrency Monitoring application currently in development. The application allows for users to monitor cryptocurrency in real time and follow currencies in the form of subscriptions
 
@@ -16,7 +16,6 @@ version: 0.1 - Base application implemented (Postgres-NodeJs-React)
 
 version: 0.2 - Postgres Database architecture implemented through Sequalize ORM, basic login feature implmented
 
-upcoming:
-version: 0.3 - Google login feature auto saves data to database
+version: 0.3 - API dashboard, socketio notification system and user currency coin subscription now implemented
 
 

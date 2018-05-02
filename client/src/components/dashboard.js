@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
 
     componentDidMount(){
         this.grabData()
-        // setInterval(this.grabData, 5000)
+        setInterval(this.grabData, 5000)
     }
 
     grabData = async () => {
