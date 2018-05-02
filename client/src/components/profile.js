@@ -1,9 +1,9 @@
 import React from 'react';
-import { Grid, Row, Col} from 'react-bootstrap';
+import { Button, Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../css/user.css';
+import '../css/profile.css';
 
-class UserPage extends React.Component {
+class Profile extends React.Component {
 
     constructor() {
         super()
@@ -33,21 +33,19 @@ class UserPage extends React.Component {
 
         return (
             <div>
-                <h2>Welcome back {dataObj[0].firstName}!</h2>
+                <h2>Your Profile</h2>
                     <div className='user-grid'>
                         <Grid>
                             <Row className="show-grid">
-                                <Col md={6} mdPush={6}>
-                                <Link to="/userCurrency">
-                                    <i class="far fa-money-bill-alt"></i>
-                                    <p> The Currency You are Following </p>
-                                </Link>
-                                </Col>
-                                <Col md={6} mdPull={6}>
-                                <Link to="/profile">
+                                <Col Col xs={6} md={4}>
                                     <i class="fas fa-user-circle"></i>
-                                    <p> Your Profile </p>
-                                </Link>
+                                </Col>
+                                <Col xs={6} md={4} className='profile-details'>
+                                <p> First Name: {dataObj[0].firstName} </p>
+                                <p> Last Name: {dataObj[0].lastName} </p>
+                                <p> Email: {dataObj[0].email} </p>
+                                <p> Account Id: {dataObj[0].token_id} </p>
+                                <Button bsStyle='primary'> Edit your Profile </Button> 
                                 </Col>
                             </Row>
                         </Grid>
@@ -57,4 +55,4 @@ class UserPage extends React.Component {
     }
 }
 
-export default UserPage
+export default Profile

@@ -1,0 +1,13 @@
+.user-grid{
+    font-size: 200px;
+    color: #ffe23f;
+    font-family: "Montserrat", sans-serif;
+}
+.user-grid p{
+    color: black;
+    font-size: 20px;
+}
+.profile-details{
+    text-align: left;
+    padding-top: 50px;
+}

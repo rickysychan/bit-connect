@@ -1,6 +1,5 @@
 .user-grid{
     font-size: 300px;
-    color: #ffe23f;
     font-family: "Montserrat", sans-serif;
 }
 .user-grid p{
@@ -14,4 +13,7 @@ html {
     margin-bottom: 0px;
     padding-bottom: 0px;
     min-height: 100%;
+}
+h2{
+    font-family: "Montserrat", sans-serif;
 }

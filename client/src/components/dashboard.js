@@ -75,7 +75,10 @@ class Dashboard extends React.Component {
             <td >{dataObj.total_supply}</td>  
             <td >{dataObj.percent_change_24h}</td> 
             <td >{dataObj.price_usd}</td>
-            <form>
+            <form action='http://localhost:5000/api/user/108508262530528259904/currencies' method='POST'>
+                <input hidden value={dataObj.name} name='name'></input>
+                <input hidden value={dataObj.symbol} name='symbol'></input>
+                <input hidden value={dataObj.price_usd} name='priceAtSubscription'></input>
                 <Button type="submit" id={dataObj.name} bsStyle="primary">Subscribe</Button> 
             </form>
         </tr>   
