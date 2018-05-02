@@ -4,6 +4,8 @@ Bitonnect is a CryptoCurrency Monitoring application currently in development. T
 
 The technology structure: Postgres-NodeJs-React
 
+![What the app looks like](https://github.com/GoUbiq/ricky-interview/blob/master/client/public/images/bitconnect-screenshot.png)
+
 # Getting started:
 
 install all dependencies in the root directory (npm install) and in the client directory
