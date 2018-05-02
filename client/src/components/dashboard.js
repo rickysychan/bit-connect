@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
     }
 
     sendData = (e) =>{
-        e.preventDefault();
+        // e.preventDefault();
         this.props.setMessage()
     }
 
